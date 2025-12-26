@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baumpflege Klamminger</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional arborist services including tree pruning, removal, health assessment, emergency services, and consultation. Serving the Woodland District area with expert tree care since 1985.">
+    <meta name="keywords" content="arborist, tree care, tree pruning, tree removal, stump grinding, tree health, emergency tree service">
+    <meta name="author" content="Baumpflege Klamminger Ltd.">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Baumpflege Klamminger">
+    <meta property="og:description" content="Ihr Profi für den Baum">
+    <meta property="og:url" content="https://yourwebsite.com">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Baskerville, 'Baskerville Old Face', Garamond, serif;
+            background: #F5F5F0;
+            color: #2B2B2B;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+        
+        /* Top navigation tabs */
+        .tab-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #FFFFFF;
+            border-bottom: 3px double #6B7C6E;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 0 40px;
+        }
+        
+        .tab {
+            padding: 18px 35px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #6B7C6E;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .tab:hover,
+        .tab.active {
+            border-bottom-color: #6B7C6E;
+            background: #FAFAF8;
+        }
+        
+        /* Main Content */
+        .main-content {
+            margin-top: 60px;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: calc(100vh - 60px);
+            scroll-behavior: smooth;
+        }
+        
+        section {
+            min-height: calc(100vh - 60px);
+            scroll-snap-align: start;
+            padding: 50px 80px;
+            background: #FFFFFF;
+            border-bottom: 1px solid #D4DCD4;
+        }
+        
+        .page-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        
+        /* Landing Section */
+        .landing {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .title-block {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .seal {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 35px;
+            border: 2px solid #6B7C6E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            background: white;
+        }
+        
+        .landing h1 {
+            font-size: 40px;
+            font-weight: normal;
+            color: #2B2B2B;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .landing .establishment {
+            font-size: 15px;
+            color: #54595D;
+            font-style: italic;
+            margin-top: 12px;
+            letter-spacing: 0.5px;
+        }
+        
+        .ornament {
+            text-align: center;
+            font-size: 20px;
+            color: #B8C5B8;
+            margin: 25px 0;
+        }
+        
+        /* Services Section */
+        .services h2 {
+            font-size: 30px;
+            font-weight: normal;
+            color: #2B2B2B;
+            margin-bottom: 35px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 22px;
+        }
+        
+        .services-content {
+            column-count: 1;
+            column-gap: 40px;
+        }
+        
+        .service-block {
+            break-inside: avoid;
+            margin-bottom: 28px;
+        }
+        
+        .service-header {
+            font-weight: bold;
+            color: #6B7C6E;
+            margin-bottom: 8px;
+            font-size: 26px;
+        }
+        
+        .service-number {
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        .service-desc {
+            font-size: 15px;
+            color: #2B2B2B;
+            text-align: justify;
+            line-height: 1.7;
+            text-indent: 20px;
+        }
+        
+        /* Gallery Section */
+        .gallery h2 {
+            font-size: 30px;
+            font-weight: normal;
+            color: #2B2B2B;
+            margin-bottom: 35px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 22px;
+        }
+        
+        .illustration-frame {
+            max-width: 700px;
+            margin: 40px auto;
+            text-align: center;
+        }
+        
+        .illustration {
+            width: 100%;
+            height: 480px;
+            /* border: 2px solid #2B2B2B;
+            border-bottom: none;
+            background: #F8F9FA; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #54595D;
+            font-style: italic;
+            overflow: hidden;
+        }
+
+        .illustration img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .plate-info {
+            border: 2px solid #2B2B2B;
+            background: #FAFAF8;
+            padding: 15px;
+            font-size: 13px;
+            color: #2B2B2B;
+            text-align: center;
+        }
+        
+        .plate-controls {
+            margin-top: 25px;
+            text-align: center;
+        }
+        
+        .plate-btn {
+            background: #FFFFFF;
+            border: 1px solid #6B7C6E;
+            padding: 8px 22px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-family: 'Baskerville', serif;
+            font-size: 14px;
+            color: #6B7C6E;
+            transition: all 0.3s ease;
+        }
+        
+        .plate-btn:hover {
+            background: #F8F9FA;
+        }
+        
+        /* Contact Section */
+        .contact h2 {
+            font-size: 30px;
+            font-weight: normal;
+            color: #2B2B2B;
+            margin-bottom: 35px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 22px;
+        }
+        
+        .directory {
+            max-width: 600px;
+            margin: 40px auto;
+            border: 2px solid #2B2B2B;
+            background: #FAFAF8;
+            padding: 40px;
+        }
+        
+        .directory-entry {
+            padding: 18px 0;
+            border-bottom: 1px dotted #B8C5B8;
+            display: flex;
+        }
+        
+        .directory-entry:last-child {
+            border-bottom: none;
+        }
+        
+        .dir-label {
+            font-weight: bold;
+            color: #6B7C6E;
+            min-width: 110px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .dir-info {
+            font-size: 15px;
+            color: #2B2B2B;
+            flex: 1;
+        }
+        
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #FFFFFF;
+            border-top: 2px solid #6B7C6E;
+            padding: 12px 30px;
+            text-align: center;
+            font-size: 11px;
+            color: #54595D;
+            z-index: 100;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .tab-nav {
+                padding: 0 25px;
+            }
+            
+            .tab {
+                padding: 15px 25px;
+                font-size: 12px;
+            }
+            
+            section {
+                padding: 40px 40px;
+            }
+            
+            .landing h1 {
+                font-size: 34px;
+            }
+            
+            .seal {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .services h2,
+            .gallery h2,
+            .contact h2 {
+                font-size: 20px;
+            }
+            
+            .illustration {
+                height: 380px;
+            }
+            
+            .directory {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tab-nav {
+                padding: 0 15px;
+                flex-wrap: wrap;
+            }
+            
+            .tab {
+                padding: 12px 15px;
+                font-size: 10px;
+            }
+            
+            section {
+                padding: 30px 25px;
+            }
+            
+            .landing h1 {
+                font-size: 28px;
+            }
+            
+            .landing .establishment {
+                font-size: 13px;
+            }
+            
+            .seal {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 25px;
+            }
+            
+            .ornament {
+                font-size: 16px;
+            }
+            
+            .services h2,
+            .gallery h2,
+            .contact h2 {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+            
+            .service-header {
+                font-size: 15px;
+            }
+            
+            .service-desc {
+                font-size: 14px;
+            }
+            
+            .illustration {
+                height: 280px;
+                font-size: 16px;
+            }
+            
+            .plate-info {
+                font-size: 12px;
+                padding: 12px;
+            }
+            
+            .plate-btn {
+                padding: 7px 18px;
+                font-size: 13px;
+            }
+            
+            .directory {
+                padding: 25px 20px;
+            }
+            
+            .directory-entry {
+                flex-direction: column;
+                gap: 5px;
+                padding: 15px 0;
+            }
+            
+            .dir-label {
+                min-width: auto;
+                font-size: 13px;
+            }
+            
+            .dir-info {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tab Navigation -->
+    <div class="tab-nav">
+        <div class="tab active" data-section="0">About</div>
+        <div class="tab" data-section="1">Leistungen</div>
+        <div class="tab" data-section="2">Eindrücke</div>
+        <div class="tab" data-section="3">Kontact</div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Landing Section -->
+        <section class="landing">
+            <div class="page-content">
+                <div class="title-block">
+                        <img src="images/baumpflege_klamminger_no_bg.png" alt="Baumpflege Klamminger Logo" style="width: 50%; height: 50%; border-radius: 50%;"">
+                    <h1>Ihr Profi für den Baum!</h1>
+                    <div class="ornament">𐂂</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section class="services">
+            <div class="page-content">
+                <h2>Leistungen</h2>
+                <div class="services-content">
+                    <div class="service-block">
+                        <div class="service-header">
+                            Baumplege
+                        </div>
+                    </div>
+                    <div class="service-block">
+                        <div class="service-header">
+                            Baumkontrolle
+                        </div>
+                    </div>
+                                        <div class="service-block">
+                        <div class="service-header">
+                            Baumabtragung
+                        </div>
+                    </div>
+                                        <div class="service-block">
+                        <div class="service-header">
+                            Problembaumfällung
+                        </div>
+                    </div>
+                                        <div class="service-block">
+                        <div class="service-header">
+                            Forstliche Dienstleistung
+                        </div>
+                                                <div class="service-desc">Schlägerungen</div>
+                                                <div class="service-desc">Auszeige</div>
+
+                    </div>
+                                        <div class="service-block">
+                        <div class="service-header">
+                            Heckenschnitt
+                        </div>
+                    </div>
+                    <!-- <div class="service-block">
+                        <div class="service-header">
+                            <span class="service-number">V.</span>
+                            Planting & Consultation
+                        </div>
+                        <div class="service-desc">Expert advice on tree selection and proper planting techniques tailored to local climate conditions and soil characteristics.</div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section class="gallery">
+            <div class="page-content">
+                <h2>Eindrücke</h2>
+                <div class="illustration-frame">
+                    <div class="illustration"><img src="images/20230207_084616.jpg"></img></div>
+                    <div class="plate-controls">
+                        <button class="plate-btn prev">◄</button>
+                        <button class="plate-btn next">►</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="contact">
+            <div class="page-content">
+                <h2>Contact</h2>
+                <div class="directory">
+                    <div class="directory-entry">
+                        <div class="dir-label">Adresse:</div>
+                        <div class="dir-info">Obersdorf 8983</div>
+                    </div>
+                    <div class="directory-entry">
+                        <div class="dir-label">Telefon:</div>
+                        <div class="dir-info">0660/35 39 157</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; <span id="currentYear"></span> Baumpflege Klamminger.</p>
+    </div>
+    
+    <script>
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Tab Navigation - Click to scroll to section
+        const tabs = document.querySelectorAll('.tab');
+        const sections = document.querySelectorAll('section');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const sectionIndex = parseInt(tab.dataset.section);
+                
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Scroll to the corresponding section
+                sections[sectionIndex].scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+        
+        // Update active tab on scroll
+        const mainContent = document.querySelector('.main-content');
+        let isScrolling = false;
+        
+        mainContent.addEventListener('scroll', () => {
+            // Don't update tabs while user is actively clicking
+            if (isScrolling) return;
+            
+            let current = 0;
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                // Check if section is in viewport (top of section is within 150px of top)
+                if (rect.top <= 150 && rect.top >= -150) {
+                    current = index;
+                }
+            });
+            
+            // Update active tab
+            tabs.forEach((tab, index) => {
+                tab.classList.toggle('active', index === current);
+            });
+        });
+        
+        // Prevent scroll event from interfering with click
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                isScrolling = true;
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 1000);
+            });
+        });
+        
+        // Gallery carousel
+        let engravingIndex = 0;
+        const galleryImages = [
+            'images/20230207_084616.jpg',
+            'images/20231023_120938.jpg',
+            'images/20231102_113211.jpg',
+            'images/20240216_134416.jpg',
+            'images/20240411_154339.jpg',
+            'images/20240422_174928.jpg',
+            'images/IMG-20210902-WA0013.jpg',
+            'images/IMG-20210902-WA0030.jpg'
+        ];
+        const totalEngravings = galleryImages.length;
+        const illustration = document.querySelector('.illustration');
+        const prevBtn = document.querySelector('.plate-btn.prev');
+        const nextBtn = document.querySelector('.plate-btn.next');
+        let autoplayInterval;
+
+        function updateIllustration() {
+            const img = illustration.querySelector('img');
+            if (img) {
+                img.src = galleryImages[engravingIndex];
+            }
+        }
+
+        function nextImage() {
+            engravingIndex = (engravingIndex + 1) % totalEngravings;
+            updateIllustration();
+        }
+
+        function prevImage() {
+            engravingIndex = (engravingIndex - 1 + totalEngravings) % totalEngravings;
+            updateIllustration();
+        }
+
+        function startAutoplay() {
+            autoplayInterval = setInterval(nextImage, 3000); // Change image every 3 seconds
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplayInterval);
+            startAutoplay();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            prevImage();
+            resetAutoplay(); // Reset autoplay timer when manually navigating
+        });
+
+        nextBtn.addEventListener('click', () => {
+            nextImage();
+            resetAutoplay(); // Reset autoplay timer when manually navigating
+        });
+
+        // Start autoplay when page loads
+        startAutoplay();
+    </script>
+</body>
+</html>
